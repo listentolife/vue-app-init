@@ -1,0 +1,28 @@
+{
+  "name": "vue-app-init",
+  "version": "1.0.0",
+  "description": "一个手写webpack配置，基于vue架构的初始化app项目",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --env.development --open --hot --config ./build/webpack.base.js",
+    "build:dev": "webpack --env.development --config ./build/webpack.base.js",
+    "build:prod": "webpack --env.production --config ./build/webpack.base.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/listentolife/vue-vant-app-init.git"
+  },
+  "keywords": [],
+  "author": "listentolife",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/listentolife/vue-vant-app-init/issues"
+  },
+  "homepage": "https://github.com/listentolife/vue-vant-app-init#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  }
+}
