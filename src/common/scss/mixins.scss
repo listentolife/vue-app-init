@@ -1,0 +1,59 @@
+// 实现上下左右细边
+@mixin border-1px($type: all, $color: #ccc, $radius: 2px, $style: solid) {
+  position: relative;
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    @if $type == all {
+      border: 1PX $style $color;
+    } @else if $type == left {
+      border-left: 1PX $style $color;
+    } @else if $type == right {
+      border-right: 1PX $style $color;
+    } @else if $type == top {
+      border-top: 1PX $style $color;
+    } @else if $type == bottom {
+      border-bottom: 1PX $style $color;
+    }
+    border-radius: $radius;
+    box-sizing: border-box;
+    // width: 100%;
+    // height: 100%;
+
+    @media (min-resolution: 2dppx) {
+      width: 200%;
+      height: 200%;
+      border-radius: $radius * 2;
+      transform: scale(.5);
+    }
+
+    @media (min-resolution: 3dppx) {
+      width: 300%;
+      height: 300%;
+      border-radius: $radius * 3;
+      transform: scale(.333);
+    }
+
+  }
+
+}
+
+// 实现圆形头像
+@mixin avatar($size: 4rem) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
